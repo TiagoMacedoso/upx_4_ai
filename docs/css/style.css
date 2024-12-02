@@ -1,0 +1,364 @@
+/* Paleta de Cores */
+:root {
+    --primary-color: #005f73;        /* Azul escuro */
+    --secondary-color: #0a9396;      /* Verde azulado */
+    --accent-color: #ee9b00;         /* Laranja vibrante */
+    --background-color: #edf2f4;     /* Cinza claro */
+    --text-color: #333333;           /* Texto padrão */
+    --white-color: #ffffff;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Body */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Container centralizado */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(
+        rgba(0, 95, 115, 0.8), 
+        rgba(0, 95, 115, 0.8)
+    ), url('/image/transito02.png') no-repeat center center/cover;
+    color: var(--white-color);
+    padding: 80px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ca8500;
+}
+
+/* Sobre o Projeto */
+#about {
+    background: var(--white-color);
+    padding: 60px 0;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2.4em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.benefits {
+    list-style: none;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.benefits li {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    padding: 15px;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Menu Hamburguer */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--accent-color);
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background-color: var(--white-color);
+    left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.hamburger-menu::before {
+    top: 8px;
+}
+
+.hamburger-menu::after {
+    bottom: 8px;
+}
+
+.menu-items {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+}
+
+.menu-items.show {
+    transform: translateX(0);
+}
+
+.menu-item {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Como Funciona - Seção e Imagem */
+#how-it-works {
+    background: var(--background-color);
+    padding: 60px 0;
+    text-align: center;
+}
+
+#how-it-works .how-it-works-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+#how-it-works h2 {
+    color: var(--primary-color);
+    font-size: 2.4em;
+    margin-bottom: 20px;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.step {
+    background: var(--white-color);
+    padding: 30px;
+    border-radius: 12px;
+    flex: 1;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: scale(1.05);
+}
+
+.step h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.image-container {
+    display: flex;
+    flex: 1;
+    max-width: 450px;
+    justify-content: center;
+    gap: 16px;
+    margin: 0 auto;
+    
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Aplicações */
+#applications {
+    background: var(--white-color);
+    padding: 60px 0;
+    text-align: center;
+}
+
+#applications h2 {
+    color: var(--primary-color);
+    font-size: 2.4em;
+    margin-bottom: 20px;
+}
+#applications p {
+    margin-bottom: 30px; 
+}
+
+#applications ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+#applications li {
+    background: var(--secondary-color);
+    color: var(--white-color);
+    padding: 15px 25px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#team {
+    background: var(--white-color);
+    padding: 60px 0;
+    text-align: center;
+}
+
+#team h2 {
+    font-size: 2.4em;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.image-container-team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-container-team .member {
+    flex: 1 1 calc(30% - 20px); 
+    max-width: calc(30% - 20px);
+    text-align: center;
+    padding: 15px;
+    background-color: var(--background-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.image-container-team .member:hover {
+    transform: scale(1.05);
+}
+
+.image-container-team img {
+    width: 100%;
+    max-width: 130px; 
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-container-team h3 {
+    font-size: 1.2em;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+.image-container-team p {
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+/* Formulário de Contato */
+#contact {
+    background: var(--background-color);
+    padding: 60px 0;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.4em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+form input, form textarea, form button {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto;
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+form button {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #ca8500;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
